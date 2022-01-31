@@ -1,0 +1,37 @@
+zone "catch22.se" {
+    type master;
+    file "catch22.se";
+    allow-transfer { 127.0.0.1; };
+    dnssec-policy lab_p256;
+    update-policy { grant local-ddns zonesub any;
+    		    grant labtsig zonesub any; };
+};
+
+dnssec-policy "lab_p256" {
+    keys {
+         ksk lifetime unlimited algorithm ecdsa256;
+         zsk lifetime PT30M algorithm ecdsa256;
+    };
+
+    // Key timings
+    dnskey-ttl PT5M;
+    publish-safety PT1M;
+    retire-safety PT1M;
+    purge-keys PT4H; // BIND does not recognise this option, although it's documented //
+
+    // Signature timings
+    signatures-refresh PT5M;
+    signatures-validity PT15M;
+    signatures-validity-dnskey PT15M;
+    
+    // Zone parameters
+    max-zone-ttl PT5M;
+    zone-propagation-delay PT5M;
+    parent-ds-ttl PT2M;
+    parent-propagation-delay 0;
+};
+
+key "labtsig" {
+	algorithm hmac-sha256;
+	secret "ADD_A_LAB_TSIG_HERE";
+};

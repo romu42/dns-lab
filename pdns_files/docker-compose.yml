@@ -1,0 +1,36 @@
+---
+version: '2.0'
+services:
+  signer1:
+    hostname: signer1
+    build:
+      context: .
+      dockerfile: Dockerfile-signerlab
+    environment:
+      - PDNS_AUTH_API_KEY=florpflerp
+    ports:
+      - "1153:53"
+      - "1153:53/udp"
+      - "8181:8081"
+  signer2:
+    hostname: signer2
+    build:
+      context: .
+      dockerfile: Dockerfile-signerlab
+    environment:
+      - PDNS_AUTH_API_KEY=florpflerp
+    ports:
+      - "1253:53"
+      - "1253:53/udp"
+      - "8281:8081"
+  bind1:
+    image: "internetsystemsconsortium/bind9:9.16"
+    ports:
+      - "1353:53"
+      - "1353:53/udp"
+    volumes:
+      - ${BIND_LAB}/etc/bind:/etc/bind
+      - ${BIND_LAB}/var/cache/bind:/var/cache/bind
+      - ${BIND_LAB}/var/lib/bind:/var/lib/bind
+      - ${BIND_LAB}/var/log:/var/log
+      - ${BIND_LAB}/var/run/named:/var/run/named
