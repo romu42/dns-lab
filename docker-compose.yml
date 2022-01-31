@@ -5,9 +5,9 @@ services:
     hostname: signer1
     build:
       context: .
-      dockerfile: Dockerfile-signerlab
+      dockerfile: pdns/Dockerfile-signerlab
     environment:
-      - PDNS_AUTH_API_KEY=florpflerp
+      - PDNS_AUTH_API_KEY=labserver
     ports:
       - "1153:53"
       - "1153:53/udp"
@@ -16,9 +16,9 @@ services:
     hostname: signer2
     build:
       context: .
-      dockerfile: Dockerfile-signerlab
+      dockerfile: pdns/Dockerfile-signerlab
     environment:
-      - PDNS_AUTH_API_KEY=florpflerp
+      - PDNS_AUTH_API_KEY=labserver
     ports:
       - "1253:53"
       - "1253:53/udp"
