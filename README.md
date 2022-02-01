@@ -15,6 +15,11 @@ PowerDNS listening on localhost:1153
 PowerDNS listening on localhost:1153
 
 ### Setup
+#### Clone DNS-Lab repo 
+```
+git clone git@github.com:romu42/dns-lab.git
+cd dns-lab
+```
 
 #### Clone PowerDNS repo
 ```
@@ -31,7 +36,7 @@ git submodule update
 ./builder/build.sh
 ```
 
-#### Copy the pdns files for lab environment
+#### Copy the files for lab environment
 ```
 cd ..
 
@@ -40,6 +45,8 @@ cp pdns_files/Dockerfile-signerlab pdns/Dockerfile-signerlab
 cp pdns_files/signerlab-pdns.conf pdns/dockerdata/signerlab-pdns.conf
 
 cp pdns_files/docker-compose.yml pdns/docker-compose.yml
+
+cp bind/catch22.se bind/var/cache/bind/catch22.se
 ```
 
 
