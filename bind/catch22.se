@@ -1,0 +1,18 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+catch22.se		IN SOA	ns.catch22.se. hostmaster.catch22.se. (
+				1618588464 ; serial
+				14400      ; refresh (4 hours)
+				3600       ; retry (1 hour)
+				1814400    ; expire (3 weeks)
+				120        ; minimum (2 minutes)
+				)
+			NS	ns1.catch22.se.
+$ORIGIN catch22.se.
+$TTL 300	; 5 minutes
+msat2			NS	signer1
+			NS	signer2
+$TTL 120	; 2 minutes
+signer1			A	127.0.0.1
+signer2			A	127.0.0.1
+www			A	127.0.0.1

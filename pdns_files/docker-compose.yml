@@ -29,8 +29,8 @@ services:
       - "1353:53"
       - "1353:53/udp"
     volumes:
-      - ${BIND_LAB}/etc/bind:/etc/bind
-      - ${BIND_LAB}/var/cache/bind:/var/cache/bind
-      - ${BIND_LAB}/var/lib/bind:/var/lib/bind
-      - ${BIND_LAB}/var/log:/var/log
-      - ${BIND_LAB}/var/run/named:/var/run/named
+      - ../bind/etc/bind:/etc/bind
+      - ../bind/var/cache/bind:/var/cache/bind
+      - ../bind/var/lib/bind:/var/lib/bind
+      - ../bind/var/log:/var/log
+      - ../bind/var/run/named:/var/run/named

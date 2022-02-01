@@ -30,8 +30,3 @@ dnssec-policy "lab_p256" {
     parent-ds-ttl PT2M;
     parent-propagation-delay 0;
 };
-
-key "labtsig" {
-	algorithm hmac-sha256;
-	secret "ADD_A_LAB_TSIG_HERE";
-};

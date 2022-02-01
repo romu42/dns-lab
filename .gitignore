@@ -1,3 +1,5 @@
 pdns/
 venv/*
-tsig/
+bind/etc/bind/tsigs
+bind/var/cache/bind/*
+bind/var/run/
