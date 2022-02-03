@@ -1,4 +1,4 @@
-[git submodule init##](##) DNSLAB 
+## DNSLAB 
 
 Still fairly naive, a parent and two children. This is used to test Music. https://github.com/DNSSEC-Provisioning/music
 
