@@ -1,0 +1,4 @@
+server localhost 1353
+zone catch22.se.
+update add msat2.catch22.se 300 IN NS signer2.catch22.se.
+send
