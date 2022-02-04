@@ -11,7 +11,6 @@ catch22.se		IN SOA	ns.catch22.se. hostmaster.catch22.se. (
 $ORIGIN catch22.se.
 $TTL 300	; 5 minutes
 msat2			NS	signer1
-			NS	signer2
 $TTL 120	; 2 minutes
 ns			A 	127.0.0.1
 signer1			A	127.0.0.1
