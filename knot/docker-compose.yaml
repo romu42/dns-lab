@@ -1,0 +1,27 @@
+---
+version: '3.9'
+services:
+  p1:
+    hostname: p1 
+    image: "cznic/knot:3.2"
+    ports:
+      - "1453:53"
+      - "1453:53/udp"
+    command: ["knotd","-c","/config/knot.conf"]
+    volumes:
+      - "./p1/etc/knot:/config"
+      - "./p1/zones:/var/lib/knot/zones"
+      - "./p1/rundir:/rundir"
+      - "./p1/storage:/storage"
+  p2:
+    hostname: p2 
+    image: "cznic/knot:3.2"
+    ports:
+      - "1553:53"
+      - "1553:53/udp"
+    command: ["knotd","-c","/config/knot.conf"]
+    volumes:
+      - "./p2/etc/knot:/config"
+      - "./p2/zones:/var/lib/knot/zones"
+      - "./p2/rundir:/rundir"
+      - "./p2/storage:/storage"

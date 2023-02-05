@@ -1,0 +1,21 @@
+;; Zone dump (Knot DNS 3.2.4)
+edudig.se.          	300	SOA	ns1.catch22.se. hostmaster.edudig.se. 2021052636 28800 7200 604800 7200
+edudig.se.          	30	A	13.53.135.139
+edudig.se.          	300	NS	ns1.catch22.se.
+edudig.se.          	300	NS	ns2.catch22.se.
+edudig.se.          	300	DNSKEY	256 3 13 aRz6MuRWJOTlr+uY+IW6wDcEzlEFOL2L8jFGF1iEqWygyTaL5UN+zRDFiFGM9LMEqNMWALRi8BIaDl1EbR4+aw==
+edudig.se.          	300	DNSKEY	257 3 13 oMUqEcbHTbp8OzxO/cQleZVPjct5aPM1JhBtChmnckp55DOjwPU3W3O/s1Ud9T50RFJl2l14a2g2J9fxlVurqw==
+www.edudig.se.      	30	A	13.53.135.139
+;; DNSSEC signatures
+edudig.se.          	30	RRSIG	A 13 2 30 20230206072111 20230123055111 37398 edudig.se. dgQvZSl/J6J+fozqj51dG4IQezP61pis1URuOckKHmH89rMcMIVnz8aKG4k5pwfqRs2YsKpEacXXn9N9sSKkow==
+edudig.se.          	300	RRSIG	NS 13 2 300 20230210045228 20230127032228 37398 edudig.se. ODsUWyfDHh7Nf3AxZkyn5BgxQ56/0FbDjE13V0YApma2oixJDMhFdrMhgg9uHthopfdyADvOXiQqjm6Z+gh3gw==
+edudig.se.          	300	RRSIG	SOA 13 2 300 20230210045228 20230127032228 37398 edudig.se. RyG0fsbaqYra2yZxjvW5Z88a2oSwOuktTd4UY+R4E4FumNSs4P4OySyTp4TAAsZ9z3BjZVQ+WyMAvQkBf1skrw==
+edudig.se.          	300	RRSIG	NSEC 13 2 300 20230206072111 20230123055111 37398 edudig.se. DBrFWganWDdv5woKvcHAX76VU6619sGqI1oHDOH0FYGev7Cokp/bO2M/2qulp9+4imZQkzQrVy4jYBX/0Vcnzw==
+edudig.se.          	300	RRSIG	DNSKEY 13 2 300 20230210045228 20230127032228 22905 edudig.se. 1jEPYaDegawSUNV85iCXNURuob4JqxWHsg6fBcIwYVEbF1khNxCDo0zO31nQR3sbOKgv2egXvwRr8smohyoE5g==
+www.edudig.se.      	30	RRSIG	A 13 3 30 20230206072111 20230123055111 37398 edudig.se. Axk0PUxFKyWxcGfclTtsZ2qJcFYn6TJk6Q/zUxyoOCLvOLdk774wdGH+fwerikfToVxzLySb2aOS/AH+UPS4kw==
+www.edudig.se.      	300	RRSIG	NSEC 13 3 300 20230206072111 20230123055111 37398 edudig.se. afBRDrw47zvkFNt9UzRom++n8by6a76aA6Q3F28rSKPdKy3dQc6I+k7jHJzmiMe4zRk2k8kmo9jSs6+BGM0zMw==
+;; DNSSEC NSEC chain
+edudig.se.          	300	NSEC	www.edudig.se. A NS SOA RRSIG NSEC DNSKEY
+www.edudig.se.      	300	NSEC	edudig.se. A RRSIG NSEC
+;; Written 16 records
+;; Time 2023-01-27 04:52:28 UTC
