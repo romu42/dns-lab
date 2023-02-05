@@ -1,3 +1,5 @@
 pdns/
 venv/*
 tsig/
+rundir/
+storage/
