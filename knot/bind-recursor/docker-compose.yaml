@@ -1,0 +1,16 @@
+---
+version: '2.0'
+services:
+  bind1:
+    image: "internetsystemsconsortium/bind9:9.16"
+    container_name: bind-r
+    ports:
+      - "1353:53"
+      - "1353:53/udp"
+    volumes:
+      - ./etc/bind:/etc/bind
+      - ./var/cache/bind:/var/cache/bind
+      - ./var/lib/bind:/var/lib/bind
+      - ./var/log:/var/log
+      - ./var/run/named:/var/run/named
+      - ./usr/share/dns/root.hints:/usr/share/dns/root.hints

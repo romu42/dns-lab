@@ -1,0 +1,7 @@
+.			300	IN	SOA	a.fake-root.rog. email.rog.se. 2023020600 1800 900 604800 86400
+.			300	IN	NS	a.fake-root.rog.
+.			300	IN	NS	b.fake-root.rog.
+rog.		300 IN  NS  tld1.
+se.		    300 IN  NS  tld1.
+xa.         300 IN  NS  tld1. 
+xb.         300 IN  NS  tld1. 

@@ -1,27 +1,47 @@
 ---
 version: '3.9'
 services:
-  p1:
-    hostname: p1 
+  root1:
+    hostname: root1 
     image: "cznic/knot:3.2"
-    ports:
-      - "1453:53"
-      - "1453:53/udp"
-    command: ["knotd","-c","/config/knot.conf"]
-    volumes:
-      - "./p1/etc/knot:/config"
-      - "./p1/zones:/var/lib/knot/zones"
-      - "./p1/rundir:/rundir"
-      - "./p1/storage:/storage"
-  p2:
-    hostname: p2 
-    image: "cznic/knot:3.2"
+    expose: 
+      - "53"
     ports:
       - "1553:53"
       - "1553:53/udp"
     command: ["knotd","-c","/config/knot.conf"]
     volumes:
-      - "./p2/etc/knot:/config"
-      - "./p2/zones:/var/lib/knot/zones"
-      - "./p2/rundir:/rundir"
-      - "./p2/storage:/storage"
+      - "./root1/etc/knot:/config"
+      - "./root1/zones:/var/lib/knot/zones"
+      - "./root1/rundir:/rundir"
+      - "./root1/storage:/storage"
+    container_name: a.fake-root.rog
+  tld1:
+    hostname: tld1 
+    image: "cznic/knot:3.2"
+    expose: 
+      - "53"
+    ports:
+      - "1453:53"
+      - "1453:53/udp"
+    command: ["knotd","-c","/config/knot.conf"]
+    volumes:
+      - "./tld1/etc/knot:/config"
+      - "./tld1/zones:/var/lib/knot/zones"
+      - "./tld1/rundir:/rundir"
+      - "./tld1/storage:/storage"
+  bind1:
+    image: "internetsystemsconsortium/bind9:9.16"
+    container_name: bind-r
+    expose: 
+      - "53"
+    ports:
+      - "1353:53"
+      - "1353:53/udp"
+    volumes:
+      - ./bind-recursor/etc/bind:/etc/bind
+      - ./bind-recursor/var/cache/bind:/var/cache/bind
+      - ./bind-recursor/var/lib/bind:/var/lib/bind
+      - ./bind-recursor/var/log:/var/log
+      - ./bind-recursor/var/run/named:/var/run/named
+      - ./bind-recursor/usr/share/dns/root.hints:/usr/share/dns/root.hints

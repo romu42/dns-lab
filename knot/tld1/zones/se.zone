@@ -1,0 +1,3 @@
+se. 			300	IN	SOA	a.ns.se. email.rog.se. 2023020600 1800 900 604800 86400
+se. 			300	IN	NS	a.ns.se.
+se.		        300 IN  NS  tld1.
